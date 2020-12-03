@@ -8,6 +8,13 @@ class DevicesRepository extends BaseRepository {
         super(DevicesModel);
         _device = DevicesModel;
     }
+
+    async getArduinoPin(pin) {
+        const device = await _device.findOne({
+            arduinoPin: pin
+        });
+        return device;
+    }
 }
 
 module.exports = new DevicesRepository();

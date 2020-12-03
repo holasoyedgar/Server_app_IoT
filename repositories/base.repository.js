@@ -7,15 +7,16 @@ class BaseRepository {
         return await this.model.findById(id).populate(populate);
     }
 
-    async getAllPopulated(parameters, pageNumber, populate) {
+    async getAllPopulated(parameters, pageNumber, populate, sort) {
         const options = {
             page: pageNumber || 1,
             limit: 10,
-            populate
+            populate,
+            sort
         };
         return await this.model.paginate(parameters, options);
     }
-
+    
     async getAll(pageNumber) {
         const options = {
             page: pageNumber || 1,

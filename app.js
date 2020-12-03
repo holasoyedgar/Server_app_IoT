@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 require("express-async-errors"); //To throw error in execution time
+const cors = require('cors');
+
+app.use(cors());
 
 // Routes
 const {

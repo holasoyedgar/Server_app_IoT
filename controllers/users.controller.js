@@ -33,6 +33,11 @@ class UsersController {
         return success(res, 200, {});
     }
 
+    async getUser(req, res) {
+        const { user } = req;
+        return success(res, 200, user);
+    }
+
     
 }
 
