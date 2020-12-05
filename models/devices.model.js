@@ -30,6 +30,13 @@ let deviceSchema = new Schema({
     }
 });
 
+deviceSchema.methods.toJSON = function () {
+    let device = this.toObject();
+    delete device.createdAt;
+    delete device.updatedAt;
+    delete device.__v;
+    return device;
+}
 
 deviceSchema.plugin(mongoosePaginate);
 
