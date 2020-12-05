@@ -6,7 +6,6 @@
  */
 let success = (res, status, response) => {    
     return res.status(status).json({
-        ok: true,
         response
     });
 }
